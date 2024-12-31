@@ -1,46 +1,69 @@
 # gitignore_dataset
-GitHub Dataset for .gitignore Analysis
+Dataset for .gitignore Analysis
 
 ## TL; DR
-This repository includes the dataset of GitHub repositories:
-1. ZIP files of 1000 GitHub repositories
-2. *Original* directory structures of 1 (941 / 1000 repos)
-    - Truncated contents of all files (exc. .gitignore)
-    - **Restored** files based on .gitignore
+This repository includes the dataset of .gitignore:
+1. Unique .gitignore files (1999 files)
+2. Raw repository data of 1 (1999 repositories)
+2. *Restored* directory structures (856 repositories)
+    - **Restoring** files based on .gitignore
+    - Truncating contents of all files (except .gitignore)
 
-## ZIP Files
-Randomly chosen 1000 GitHub repositories are provided as compressed ZIP files, up to 300 MB. Files over 50MB are stored with Git LFS.
+# Unique .gitignore Files
+1999 unique .gitignore files randomly collected from GitHub are provided in ``/ignores``.
+Each file has a unique ID and is stored in a directory labeled by it.
+Note that files are renamed "gitignore" (leading dot removed), so as not to work as real .gitignores.
+**Please re-rename them when using it as real .gitignore.**
+
+Total Size: 16MB
+
+## Raw Repository Data
+Contents of 1999 GitHub repositories that contain .gitignore described earlier are provided in ``/raw_data``.
+Each data is in ZIP format, named by .gitignore ID.
 
 Total size: 5.4 GB
 
-## *Original* Directory Structures
-*Original* directory structures of repositories of 1 are provided. Currently 941 out of 1000 repositories are available, which leaves much to be desired. All of the files included, except for .gitignore, are empty for the sake of this repository size.
+## *Restored* Directory Structures
+856 *restored* directory structures of repositories are provided in ``/restored``.
+All of the files included, except for .gitignore, are emptied for the sake of this repository size.
 
-The word *original* means that the directory structure is what it **may** have been before .gitignore is applied. In other words, files that are ignored by .gitignore are **restored** in the *original* directory structure. For this reason, .gitignores in them are renamed "gitignore", so as not to work as real .gitignores. **Please re-rename them when using.**
+*Restoring* means making the directory structure what it **may** have been before .gitignore is applied.
 
-Note that it may **not** be the same as what it was before ignoring, though it is sure that applying .gitignore to it gives what is in the original ZIP file.
+Note that it may **not** be the same as what it was before ignoring.
 
-Total size: 1.8 GB
+Total size: 4.4 GB
+
+## Other
+``/download_out`` contains ``download_info.csv`` which shows repository information for each ID, and ``/restore_out`` contains ``restore_info.csv`` which shows each restoration information.
 
 ## Usage
 Download ZIP (recommended, because there are too many files for Git to track.) or clone this repository.
 
 ## Building Your Own Dataset
-You can build your own dataset by using the programs provided. Run the commands below in the **root** directory of this repository.
+You can build your own dataset by using the programs provided.
+Run the commands below in the **root** directory of this repository.
 
 0. Get your personal access token of GitHub and store it in ``./GITHUB_TOKEN`` for getting rid of GitHub API call limit.
 
-1. Download raw repository data with download.py:
+1. Download raw repository data and save them in ``/raw_data`` with download.py:
 
     ```bash
     python download.py
     ```
 
-    You can set the number of files to be downloaded (default 10) and the maximum size of each file (default 10 MB):
+    Downloading repository is randomly selected from ``ignores.csv`` (includes 5440229 .gitignores).
+
+    You can set the number of repositories to be downloaded (default 10) and the maximum size of each repository (default 10 MB):
 
     ```bash
     # 1000 files, 50 MB
     python download.py 1000 50000   # set maximum size in KB
+    ```
+
+    You can extract .gitignore files from each repository data and save them in ``/ignores`` by running ``extract.sh``:
+
+    ```bash
+    bash extract.sh
     ```
 
 2. Restore files with restore.py:
@@ -49,4 +72,12 @@ You can build your own dataset by using the programs provided. Run the commands 
     python restore.py
     ```
 
-    (Restoring files without downloading raw data is not yet supported, but will be.)
+    You can set the number of repositories to run restoration.
+    If not set, all of the repositories in ``/raw_data`` are restored.
+    You can also restore a certain repository by specifying its ID.
+
+    ```bash
+    python restore.py [-n NUM_FILES] [-f TARGET_ID]
+    ```
+
+    (Note that -n and -f flags are exclusive.)
