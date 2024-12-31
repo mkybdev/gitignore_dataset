@@ -1,0 +1,3 @@
+raw_data/** filter=lfs diff=lfs merge=lfs -text
+restored/** filter=lfs diff=lfs merge=lfs -text
+ignores.csv filter=lfs diff=lfs merge=lfs -text
