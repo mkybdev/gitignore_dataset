@@ -1,0 +1,20 @@
+# NetBeans IDE
+
+nbproject/
+
+# Composer
+
+vendor/
+
+# phpDocumentor
+
+phpdoc.xml
+
+# PHPUnit
+
+phpunit.xml
+
+# Custom
+
+build/
+review/

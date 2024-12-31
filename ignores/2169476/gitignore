@@ -1,0 +1,15 @@
+
+# 忽略NetBeans项目配置目录
+nbproject/
+
+# 忽略vendor目录
+vendor/
+
+# 忽略环境配置文件
+config/env
+
+# 忽略运行时目录
+runtime/
+
+# 
+composer.lock

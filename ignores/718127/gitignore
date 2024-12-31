@@ -1,0 +1,15 @@
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+
+.gradle
+.idea
+
+build
+out
+classes
+
+atlassian-ide-plugin.xml
+

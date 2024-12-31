@@ -1,0 +1,7 @@
+/setup.py
+/*.auto.pyx
+
+/build/
+/installed-files
+
+/brlapi.html

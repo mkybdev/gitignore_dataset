@@ -1,0 +1,6 @@
+/.buildpath
+/.project
+/.settings
+/pkg/
+/tmp/
+/Gemfile.lock

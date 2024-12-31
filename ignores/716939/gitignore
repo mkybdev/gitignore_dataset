@@ -1,0 +1,8 @@
+/.idea/
+/.awscache/
+/.awspublish-*
+/node_modules/
+/public/lib/
+/public/css/
+/dist/
+/test/main.js

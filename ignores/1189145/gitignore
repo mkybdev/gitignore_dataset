@@ -1,0 +1,9 @@
+.DS_Store
+results.html
+pkg
+html
+features/test_files/target/*
+!features/test_files/target/.gitkeep
+*.gem
+tmp/
+Gemfile.lock

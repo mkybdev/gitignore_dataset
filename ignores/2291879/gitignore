@@ -1,0 +1,9 @@
+# files to ignore in commits
+IssueTracker.Web/obj
+IssueTracker.Web/bin
+IssueTracker.Service/obj
+IssueTracker.Service/bin
+IssueTracker.Model/obj
+IssueTracker.Model/bin
+IssueTracker.Core/obj
+IssueTracker.Core/bin

@@ -1,0 +1,12 @@
+.DS_Store
+*~
+.rvmrc
+.bundle/config
+start.sh
+bin/*
+proxy/accept*
+proxy/apache.conf
+proxy/apache.pid
+proxy/apache-error.log
+tests/jspec/test-reports/*
+tests/jspec/reports/*

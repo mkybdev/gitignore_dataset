@@ -1,0 +1,39 @@
+Ignore temporary editor files.
+.*.sw[po]
+*~
+.DS_Store
+
+# Ignore project files
+*.pyproj
+*.sublime-project
+*.sublime-workspace
+sftp-config.json
+.idea
+.vscode
+
+# Ignore binaries.
+*.py[cod]
+*.so
+*.dll
+
+# Tox files
+.tox/
+
+# ignore Coverage.py files
+.coverage*
+
+# Ignore files created by setup.py.
+build/
+dist/
+MANIFEST
+*.egg-info
+*.egg
+
+# Ignore testing cache
+.pytest_cache
+
+# Ignore virtualenv folder
+venv/
+
+# Ignore mypy cache folder
+.mypy_cache

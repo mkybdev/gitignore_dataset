@@ -1,0 +1,132 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# Training data and Testing data
+Outdoor_Object_Recognition_Engine/dataset
+Outdoor_Object_Recognition_Engine/custom_test
+
+# Description Generator
+Description_Generator/Data/pretrainedmodel/*
+Description_Generator/Data/Captions/vgg19_extracted_features.h5
+
+.idea/workspace.xml
+
+speak\.mp3
+
+command\.mp3
+
+Outdoor_Object_Recognition_Engine/edited\.jpg
+
+Dialogue_Manager/speech_input\.wav
+
+
+speech_input\.wav
+
+\.idea/modules\.xml
+/Indoor_Object_Recognition_Engine/IOIM/Hand_Gesture_Recognition.h5
+/Indoor_Object_Recognition_Engine/IOIM/Indoor_Object_Recognition.h5
+Description_Generator/Data/pretrainedmodel/
+Dialogue_Manager/Dialogue_Manager_59010a9be645.json
+
+
+
+Indoor_Object_Recognition_Engine/Hand_Gesture/Hand_Gesture_Recognition\.h5

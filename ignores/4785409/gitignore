@@ -1,0 +1,14 @@
+*~
+*#
+*.o
+*.a
+*.so
+*.dylib
+*.dSYM
+*.dll
+*.dummy
+azure-test
+build
+/doc
+/target
+/Cargo.lock

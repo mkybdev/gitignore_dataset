@@ -1,0 +1,10 @@
+controllers/*.so
+ff
+*.o
+*.a
+*.log
+*.cache
+*.so
+config.status
+a.out
+*.swp

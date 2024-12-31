@@ -1,0 +1,7 @@
+composer.lock
+/vendor
+/tests/app/cache
+/tests/app/logs
+/tests/app/sqlite.db.cache
+/tests/app/autoload.php
+/bin

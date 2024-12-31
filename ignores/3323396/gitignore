@@ -1,0 +1,9 @@
+*.iml
+target
+.settings
+.classpath
+.project
+.idea
+/leiame.txt
+pom.xml.versionsBackup
+_*.sh

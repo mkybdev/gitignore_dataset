@@ -1,0 +1,10 @@
+*~
+*.pyc
+.\#*
+\#*\#
+/.tox
+MANIFEST
+
+/build/
+/dist/
+/sagenb_export.egg-info/

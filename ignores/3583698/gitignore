@@ -1,0 +1,11 @@
+.DS_Store*
+*.pyc
+*.log
+data
+mtqinfra.csv
+mtqinfra.json
+mtqinfra.kml
+mtqinfra.linejson
+mtqinfra.xml
+output.csv
+build

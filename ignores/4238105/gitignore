@@ -1,0 +1,4 @@
+dist
+
+# Sphinx
+docs/_build

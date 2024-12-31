@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+npm-debug.log
+*.bak
+lib
+spec/fixtures/.tmp.sqlectron.json
+sqlectron.db
+.nyc_output/

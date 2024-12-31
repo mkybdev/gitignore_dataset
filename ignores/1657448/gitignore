@@ -1,0 +1,5 @@
+.idea
+app/root/.htaccess
+nginx.inc
+TODO.php
+bin/idehelper/*.js

@@ -1,0 +1,11 @@
+*.class
+*build/
+*test/
+*dist/
+/MCPainter/nbproject/private/
+*genfiles.properties
+#Intellij
+*.idea
+
+# Maven
+target

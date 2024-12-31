@@ -1,0 +1,6 @@
+debug.*
+.idea/
+vendor/
+.phpintel/
+build/
+.phpunit.result.cache

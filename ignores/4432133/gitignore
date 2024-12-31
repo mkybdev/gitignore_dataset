@@ -1,0 +1,6 @@
+/saucy-server-*
+/trusty-server-*
+/*.iml
+/auxiliary.iso
+/disk.img
+/.idea/

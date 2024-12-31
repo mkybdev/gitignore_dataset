@@ -1,0 +1,8 @@
+.hg/**
+.idea/**
+*.iml
+.hgignore
+gen-external-apklibs/**
+target/**
+res/values/api_access.xml
+keystore

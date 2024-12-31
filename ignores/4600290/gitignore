@@ -1,0 +1,45 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+*.res
+*.exp
+
+# Executables
+*.exe
+*.out
+*.app
+*.swp
+*.bak
+
+*.asp
+*.gz
+*.db
+*.sln
+*.pdb
+*.suo
+*.vcxproj
+*.opendb
+*.filters
+*.user
+*.tmp
+*.ipch

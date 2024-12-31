@@ -1,0 +1,13 @@
+.repl_history
+build
+resources/*.nib
+resources/*.momd
+resources/*.storyboardc
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+.DS_Store
+doc/*
+.dat*
+.yardoc

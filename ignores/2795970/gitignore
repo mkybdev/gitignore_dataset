@@ -1,0 +1,44 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Project Configurations
+.cproject
+.project
+.settings/
+
+# Qt File
+*.pro
+*.pro.user
+*/build-*/
+build-*/
+*.autosave
+
+# My files
+*/debug/
+*/release/

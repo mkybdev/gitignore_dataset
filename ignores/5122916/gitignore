@@ -1,0 +1,7 @@
+bin/
+gen/
+target/
+
+# Images are generated from svg with rasterize.sh script in media/
+ic_launcher.png
+ic_notify.png

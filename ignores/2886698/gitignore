@@ -1,0 +1,54 @@
+# C++ objects and libs
+
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+
+# Qt-es
+
+/.qmake.cache
+/.qmake.stash
+*.pro.user
+*.pro.user.*
+*.moc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+Makefile*
+*-build-*
+
+# QtCreator
+
+*.autosave
+
+# START Unity .gitignore 
+  # Based on forum post at http://answers.unity3d.com/questions/369755/unity-on-github.html
+    ##################
+    # Unity ignores:
+    #
+    # !!! WARNING !!!
+    #
+    # … you MUST convert Unity to using Metafiles *before* you start using this
+    # .gitignore file, or you WILL lose data!
+    #
+         
+    # OS X only:
+.DS_Store
+*.swp
+*.Trashes
+     
+    # All platforms:
+Tower-Defense/Library
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.userprefs
+*.booproj
+# END Unity

@@ -1,0 +1,7 @@
+.*~
+.swp
+.tmp
+.DS_Store
+.idea
+tmp/
+*~

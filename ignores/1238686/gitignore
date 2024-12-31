@@ -1,0 +1,15 @@
+/tests/en_US.dict
+/benchmarks/en_US.dict
+dist
+cabal-dev
+*.o
+*.hi
+*.chi
+*.chs.h
+.directory
+*~
+benchmarks/bench-*
+benchmarks/en_EN.dict
+.cabal-sandbox/
+cabal.sandbox.config
+

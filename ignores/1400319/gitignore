@@ -1,0 +1,6 @@
+Gemfile.lock
+example.rb
+/invoiced-*.gem
+/coverage
+.DS_Store
+.idea/

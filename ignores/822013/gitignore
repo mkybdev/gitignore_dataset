@@ -1,0 +1,5 @@
+gol
+*.test
+.idea
+vendor
+Gopkg.lock

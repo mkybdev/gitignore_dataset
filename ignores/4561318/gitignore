@@ -1,0 +1,8 @@
+.*
+!.gitignore
+!.gitkeep
+!.github
+!.mvn
+target
+META-INF
+*.log

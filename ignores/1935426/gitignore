@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.RcppExports.o
+*.so
+*.o*
+.DS_Store

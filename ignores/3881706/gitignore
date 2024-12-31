@@ -1,0 +1,17 @@
+bin/
+trash/
+target/
+docco/
+.gitignore
+.project
+vertigo-release/
+mvn-release.txt
+vertigo-bundle/src
+*.bak
+**/abak
+**/ubak
+vertigo-site/
+*.classpath
+*/.settings/
+vertigo-x-connectors/.classpath
+*.prefs

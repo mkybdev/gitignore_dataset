@@ -1,0 +1,6 @@
+website/application/config/database.php
+website/application/logs/*
+deploy.php
+
+tags
+/website/nbproject/private/

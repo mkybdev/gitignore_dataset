@@ -1,0 +1,7 @@
+*.orig
+node_modules/
+dist/
+.sass-cache/
+app/bower_components/
+.DS_Store
+.idea/

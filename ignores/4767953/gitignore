@@ -1,0 +1,6 @@
+_site/
+_posts/
+_drafts/
+.DS_Store
+Makefile
+.bundle

@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+env/
+
+# License incompatible
+c_comp/parser_gen.py
+cmd_ir/parser_gen.py
+cbl/parser_gen.py

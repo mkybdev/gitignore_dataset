@@ -1,0 +1,12 @@
+# Mac OS X DS_Store
+.DS_Store
+
+# Dependency directory
+node_modules
+
+# Bundled file
+public/bundle.js
+public/bundle.css
+
+# Config file
+oauth-consumer-config.js

@@ -1,0 +1,11 @@
+
+ide/
+world/
+res/images/*
+**/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+Makefile
+fort_up

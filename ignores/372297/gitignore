@@ -1,0 +1,10 @@
+__pycache__
+.cache
+*.egg-info
+*.pyc
+*.wpu
+/.tox
+/.vscode
+/build
+/dist
+/docs/build

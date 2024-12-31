@@ -1,0 +1,9 @@
+# Compiled object files, static and dynamic libs
+*.o
+*.a
+*.so
+
+.DS_Store
+
+# Coverage reports, e.g. service.html
+*.html

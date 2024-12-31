@@ -1,0 +1,8 @@
+coverage
+node_modules
+npm-debug.log
+dist
+lib
+design
+.DS_Store
+.sagui

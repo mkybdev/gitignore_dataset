@@ -1,0 +1,44 @@
+# Annoying files
+.DS_Store
+*.swp
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CLion
+.idea/
+
+# Generated files
+lib/include/puppet/compiler/lexer/static_lexer.hpp
+html/
+
+# Build directories
+debug/
+release/
+cmake-build-*/

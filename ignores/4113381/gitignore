@@ -1,0 +1,40 @@
+build/
+**/build/
+classes
+
+# Gradle
+gradlew
+gradlew.bat
+.gradle/
+**/.gradle/
+**/gradlew
+**/gradlew.bat
+**/.gradletasknamecache
+
+# VIM
+*.swp
+
+# Eclipse
+workbench.xmi
+
+.idea/
+*.iml
+*.ipr
+*.iws
+**/*.iml
+out/
+.classpath
+**/.classpath
+.project
+**/.project
+.settings/
+**/.settings/
+# Ignore OS X Desktop Services store
+.DS_Store
+**/.DS_Store
+.tddium*
+**/*~
+
+# NetBeans
+.nb-gradle/
+.solano*

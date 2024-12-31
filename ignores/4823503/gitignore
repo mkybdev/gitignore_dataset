@@ -1,0 +1,7 @@
+*.so
+*.rlib
+doc
+examples/*/main
+rustful-test
+target
+Cargo.lock

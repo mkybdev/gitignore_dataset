@@ -1,0 +1,11 @@
+/log/*
+/node_modules
+/config/nginx.conf
+/config/runtime.json
+/config/runtime.yml*
+/test/config/nginx.conf
+/test/config/overrides.yml
+/test/config/runtime.json
+/test/config/runtime.yml*
+/test/log/*
+/test/tmp/*

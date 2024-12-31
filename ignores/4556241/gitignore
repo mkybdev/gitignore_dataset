@@ -1,0 +1,28 @@
+# Idea Files #
+.idea/
+*.iml
+*.ipr
+atlassian-ide-plugin.xml
+
+# Maven Files #
+target/
+tree.txt
+
+# Hibernate Files #
+dbdata/
+hbmdlloutput.txt
+
+# Developer Files #
+JBTest.java
+
+# Git Files #
+*.patch
+
+# MacOS Files #
+.DS_Store
+*~
+
+# Eclipse Files #
+/.settings
+/.classpath
+/.project

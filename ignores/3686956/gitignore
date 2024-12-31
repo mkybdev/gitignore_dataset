@@ -1,0 +1,20 @@
+# OSX 
+.DS_Store
+
+# Python package files
+funtool_ipro_processes.egg-info/*
+*.egg
+
+
+# Python Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Vim swap
+*.sw*
+
+# Data used for testing
+data/*
+
+dist/*
+build/*

@@ -1,0 +1,5 @@
+example/sonyflake_server
+
+.idea/
+vendor/
+http_server

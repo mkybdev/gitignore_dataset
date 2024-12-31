@@ -1,0 +1,113 @@
+# PDF #
+######################
+*.pdf
+
+
+# Generated Binaries #
+######################
+*.class
+*.	
+*.dll
+*.exe
+*.o
+*.so
+*.bin
+*.pdb
+
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+*.jar
+
+
+# Logs and Databases #
+######################
+*.log
+*.sql
+*.sqlite
+logs/
+
+
+# Temporary Files #
+###################
+*.tmp
+*.idb
+*.ilk
+*.ser
+
+
+# OS Generated Files #
+######################
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# Eclipse Workspace Files #
+###########################
+*.metadata
+*.project
+*.cproject
+*.classpath
+*.settings
+*.factorypath
+*.launch
+*.actionScriptProperties
+*.flexConfig.xml
+*.flexProperties
+bin-debug/
+html-template/
+.pmd
+
+# IntelliJ Workspace Files #
+###########################
+*.iml
+.idea/
+
+# netbeans #
+#############################
+**/nbproject/
+nb-configuration.xml
+
+# QT Creator #
+##############
+*.user
+
+# Maven Build Directory #
+#########################
+target/
+obj/
+build-dir/
+msdll/
+*.pyc
+bin/
+war/
+thirdparty/mos
+
+
+# Eclipse build artifacts #
+###########################
+target-eclipse/
+.recommenders/
+
+
+
+# ZXX Files #
+#############
+*.arg
+*.lnk
+*.err
+
+
+# Generated PGOP Artifacts #
+#############################
+*.Registrar
+pocclitestwitness
+
+lib*.lf

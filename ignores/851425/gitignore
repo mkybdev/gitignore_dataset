@@ -1,0 +1,7 @@
+node_modules/
+bundle.js
+angular2/**/*.js
+*.map
+target/
+*.lock
+results-unsorted.json

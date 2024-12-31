@@ -1,0 +1,16 @@
+.gitignore
+*.pyc
+src/static/gui/js/angular.min.js
+src/static/gui/js/bootstrap.min.js
+src/static/gui/js/jquery.min.js
+node_modules/
+src/static/gui/css/bootstrap.min.css
+*.log
+*.diff
+nginx/*
+expect.sh
+src/static/gui/res/*
+src/static/gui/.DS_Store
+src/static/.DS_Store
+src/.DS_Store
+ptir.json

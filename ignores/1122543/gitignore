@@ -1,0 +1,16 @@
+# History files
+.Rhistory
+
+# Example code in package build process
+*-Ex.R
+.Rproj.user
+.RData
+.Rout
+.DS_Store
+~$*
+
+# Leave out figs and output at this stage - these should be generated at any time
+figs/*
+output/*
+node_modules/*
+

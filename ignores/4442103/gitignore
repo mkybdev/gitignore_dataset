@@ -1,0 +1,9 @@
+########################
+# Files ignored by Git #
+########################
+
+# os related files
+.bundle
+.DS_Store
+.rvmrc
+.Trash-*

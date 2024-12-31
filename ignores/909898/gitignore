@@ -1,0 +1,9 @@
+__pycache__/
+
+*.xml
+*.swp
+*.py[cod]
+*.log
+*.mp3
+*.bak
+

@@ -1,0 +1,7 @@
+*.png
+*.out
+*.pyc
+*~
+
+samples/
+
