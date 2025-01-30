@@ -91,48 +91,53 @@ def restore(data_id):
         0,
     )
     flag = False
-    for pathname, dirnames, filenames in os.walk("restored/tmp"):
-        for filename in filenames:
+    for tmp_dirpath, _, tmp_dirpath_filenames in os.walk("restored/tmp"):
+        for filename in tmp_dirpath_filenames:
             if filename == ".gitignore":
                 if flag:
                     print("Multiple .gitignore files found. Skipping...")
                     return (), "fail_gitignore_placement"
                 flag = True
-                if pathname != f"restored/tmp/{data_id}":
+                if tmp_dirpath != f"restored/tmp/{data_id}":
                     print(".gitignore needs to be in the root directory. Skipping...")
                     return (), "fail_gitignore_placement"
-                with open(concat_path(pathname, filename), "r") as file:
-                    lines = file.read().splitlines()
+                with open(concat_path(tmp_dirpath, filename), "r") as file_gitignore:
+                    lines = file_gitignore.read().splitlines()
 
                     # check if the file is valid in terms of grammar, the number of global patterns
-                    nogp = 0
+                    # nogp = 0
                     for pat in lines:
                         valid = os.system(
-                            f"refactorign -p {concat_path(pathname, filename)} --validate 1>/dev/null 2>/dev/null"
+                            f"refactorign -p {concat_path(tmp_dirpath, filename)} --validate 1>/dev/null 2>/dev/null"
                         )
                         if valid != 0:
                             print(
-                                f"Invalid pattern found in {concat_path(pathname, filename)}. Skipping..."
+                                f"Invalid pattern found in {concat_path(tmp_dirpath, filename)}. Skipping..."
                             )
                             return (), "fail_invalid_pattern"
                         pat = pat.rstrip("/")
-                        if not "/" in pat:
-                            nogp += 1
-                        if nogp > 20 or len(dirnames) * (pow(2, nogp) - 1) > 2000000:
-                            print("Too many directories to add. Skipping...")
-                            return (), "fail_too_many_directories"
+                        # if not "/" in pat:
+                        #     nogp += 1
+                        # if nogp > 20 or len(dirnames) * (pow(2, nogp) - 1) > 2000000:
+                        #     print("Too many directories to add. Skipping...")
+                        #     return (), "fail_too_many_directories"
                     print("Valid .gitignore file found.")
 
+                    global_pats: list[str] = []  # save global patterns
                     for pat in reversed(lines):  # restore in reverse order
                         if "#" in pat or "!" in pat or pat == "" or pat == "/":
                             continue
-                        pat = pat.rstrip("/")
-                        if not "/" in pat or pat.startswith("**/"):  # global pattern
+                        if (
+                            not "/" in pat
+                            or pat.index("/") == len(pat) - 1
+                            or pat.startswith("**/")
+                        ):  # global pattern
                             global_pat += 1
+                            pat = pat.rstrip("/")
                             if pat.startswith("**/"):
                                 pat = pat[3:]
-                            for pathname2, dirnames2, filenames2 in os.walk(pathname):
-                                files = map(
+                            files = list(
+                                map(
                                     lambda x: x.replace("\\", ""),  # remove escape
                                     (
                                         range_expand(pat)
@@ -142,10 +147,17 @@ def restore(data_id):
                                         else [pat]
                                     ),
                                 )
+                            )
+                            for dirpath, _, _ in os.walk(tmp_dirpath):
+                                if any(
+                                    dirpath.endswith(gl_pat.removesuffix("/"))
+                                    for gl_pat in global_pats
+                                ):
+                                    continue
+                                # print(dirpath, files)
                                 for adding_file in files:
-                                    adding_file_path = concat_path(
-                                        pathname2, adding_file
-                                    )
+                                    adding_file_path = concat_path(dirpath, adding_file)
+                                    # print(adding_file_path)
                                     try:
                                         if not os.path.exists(adding_file_path):
                                             os.makedirs(adding_file_path)
@@ -156,6 +168,7 @@ def restore(data_id):
                                             f"Global: Failed to add {adding_file_path}. Skipping..."
                                         )
                                         return (), "fail_other"
+                            global_pats.extend(files)
                         else:  # globstar / normal pattern
                             parts = [[x] for x in Path(pat).parts]
                             for i, part in enumerate(parts):
@@ -181,67 +194,82 @@ def restore(data_id):
                                 if path.endswith("/**"):
                                     globstar_pat += 1
                                     root = concat_path(
-                                        pathname, path.removesuffix("/**")
+                                        tmp_dirpath, path.removesuffix("/**")
                                     )
                                     for (
-                                        pathname3,
-                                        dirnames3,
-                                        filenames3,
+                                        dirpath,
+                                        _,
+                                        _,
                                     ) in os.walk(root):
-                                        dir_path = concat_path(pathname3, "**")
+                                        if any(
+                                            dirpath.endswith(gl_pat.removesuffix("/"))
+                                            for gl_pat in global_pats
+                                        ):
+                                            continue
+                                        adding_file_path = concat_path(dirpath, "**")
                                         try:
-                                            if not os.path.exists(dir_path):
-                                                os.makedirs(dir_path)
+                                            if not os.path.exists(adding_file_path):
+                                                os.makedirs(adding_file_path)
                                                 globstar_count += 1
                                         except:
                                             os.system(f"rm -rf restored/tmp/{data_id}")
                                             print(
-                                                f"Trailing globstar: Failed to add {dir_path}. Skipping..."
+                                                f"Trailing globstar: Failed to add {adding_file_path}. Skipping..."
                                             )
                                             return (), "fail_other"
                                 elif "/**/" in path:
                                     globstar_pat += 1
                                     idx = path.index("/**/")
                                     base, target = path[:idx], path[idx + 4 :]
-                                    root = concat_path(pathname, base)
+                                    root = concat_path(tmp_dirpath, base)
                                     for (
-                                        pathname3,
-                                        dirnames3,
-                                        filenames3,
+                                        dirpath,
+                                        _,
+                                        _,
                                     ) in os.walk(root):
-                                        dir_path = concat_path(pathname3, target)
+                                        if any(
+                                            dirpath.endswith(gl_pat.removesuffix("/"))
+                                            for gl_pat in global_pats
+                                        ):
+                                            continue
+                                        adding_file_path = concat_path(dirpath, target)
                                         try:
-                                            if not os.path.exists(dir_path):
-                                                os.makedirs(dir_path)
+                                            if not os.path.exists(adding_file_path):
+                                                os.makedirs(adding_file_path)
                                                 globstar_count += 1
                                         except:
                                             os.system(f"rm -rf restored/tmp/{data_id}")
                                             print(
-                                                f"Middle globstar: Failed to add {dir_path}. Skipping..."
+                                                f"Middle globstar: Failed to add {adding_file_path}. Skipping..."
                                             )
                                             return (), "fail_other"
                                 else:  # normal pattern
                                     normal_pat += 1
-                                    dir_path = concat_path(pathname, path)
+                                    if any(
+                                        tmp_dirpath.endswith(gl_pat.removesuffix("/"))
+                                        for gl_pat in global_pats
+                                    ):
+                                        continue
+                                    adding_file_path = concat_path(tmp_dirpath, path)
                                     try:
-                                        if not os.path.exists(dir_path):
-                                            os.makedirs(dir_path)
+                                        if not os.path.exists(adding_file_path):
+                                            os.makedirs(adding_file_path)
                                             normal_count += 1
                                     except:
                                         os.system(f"rm -rf restored/tmp/{data_id}")
                                         print(
-                                            f"Normal: Failed to add {dir_path}. Skipping..."
+                                            f"Normal: Failed to add {adding_file_path}. Skipping..."
                                         )
                                         return (), "fail_other"
                     print("File restoration completed.")
             else:
-                other = concat_path(pathname, filename)
+                other = concat_path(tmp_dirpath, filename)
                 if os.path.islink(other):
                     continue
                 try:
-                    with open(other, "w") as file:
-                        file.truncate(0)
-                        file.close()
+                    with open(other, "w") as file_other:
+                        file_other.truncate(0)
+                        file_other.close()
                 except:
                     print(f"Failed to truncate {other} .")
     return (
