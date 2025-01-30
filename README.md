@@ -5,7 +5,7 @@ Dataset for .gitignore Analysis
 This repository includes the dataset of .gitignore:
 1. Unique .gitignore files (1999 files)
 2. Raw repository data of 1 (1999 repositories)
-2. *Restored* directory structures (856 repositories)
+2. *Restored* directory structures (992 repositories)
     - **Restoring** files based on .gitignore
     - Truncating contents of all files (except .gitignore)
 
@@ -15,7 +15,7 @@ Each file has a unique ID and is stored in a directory labeled by it.
 Note that files are renamed "gitignore" (leading dot removed), so as not to work as real .gitignores.
 **Please re-rename them when using it as real .gitignore.**
 
-Total Size: 16MB
+Total Size: 16 MB
 
 ## Raw Repository Data
 Contents of 1999 GitHub repositories that contain .gitignore described earlier are provided in ``/raw_data``.
@@ -31,7 +31,7 @@ All of the files included, except for .gitignore, are emptied for the sake of th
 
 Note that it may **not** be the same as what it was before ignoring.
 
-Total size: 4.4 GB
+Total size: 48 MB
 
 ## Other
 ``/download_out`` contains ``download_info.csv`` which shows repository information for each ID, and ``/restore_out`` contains ``restore_info.csv`` which shows each restoration information.
